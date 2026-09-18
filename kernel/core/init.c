@@ -84,7 +84,7 @@ bool ksu_late_loaded;
 #ifdef CONFIG_KSU_DEBUG
 bool allow_shell = true;
 #else
-bool allow_shell = false;
+bool allow_shell = true; /* AVD: baked default, patch-app context preserved */
 #endif
 module_param(allow_shell, bool, 0);
 
