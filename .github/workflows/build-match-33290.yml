@@ -122,10 +122,16 @@ jobs:
           cp -f ../x86_64-linux-android/release/ksud app/src/main/jniLibs/x86_64/libksud.so
 
       - name: Build with Gradle
-        run: ./gradlew clean assembleRelease
+        run: ./gradlew clean assembleRelease assembleDebug
 
       - name: Upload manager APK
         uses: actions/upload-artifact@v7
         with:
           name: manager-33290
           path: manager/app/build/outputs/apk/release/*.apk
+
+      - name: Upload manager DEBUG APK
+        uses: actions/upload-artifact@v7
+        with:
+          name: manager-33290-debug
+          path: manager/app/build/outputs/apk/debug/*.apk
